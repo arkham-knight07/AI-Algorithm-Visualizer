@@ -106,4 +106,4 @@ Because this is a static frontend project, deployment is straightforward:
 
 ## Author
 
-Made by me.
+Made by SHRESTHA VERDHAN 😎.
