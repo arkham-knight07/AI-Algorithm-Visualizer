@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Puzzle - AI Algorithm Visualizer</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-page">
+        <div class="game-header">
+            <h2>🧩 8 Puzzle</h2>
+            <button class="back-btn" onclick="window.location.href='/'">← Back to Home</button>
+        </div>
+
+        <div class="game-content">
+            <div class="mode-selector">
+                <button class="mode-btn" onclick="switchMode('play')">🎮 Play</button>
+                <button class="mode-btn" onclick="switchMode('solve')">🤖 Solve</button>
+                <button class="mode-btn" onclick="switchMode('learn')">📘 Learn</button>
+            </div>
+
+            <div id="play-mode" class="mode-content">
+                <h3>Slide Tiles to Solve</h3>
+                <p>Click on a tile next to the empty space to move it. Arrange numbers 1-8 in order.</p>
+                <div class="difficulty-selector">
+                    <label><strong>Difficulty:</strong></label>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-btn" onclick="setDifficulty('easy')" data-level="easy">🌱 Easy (20 moves)</button>
+                        <button class="difficulty-btn" onclick="setDifficulty('medium')" data-level="medium">⚔️ Medium (50 moves)</button>
+                        <button class="difficulty-btn active" onclick="setDifficulty('hard')" data-level="hard">👑 Hard (100 moves)</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="shuffleBtn">Shuffle</button>
+                    <button id="resetPlayBtn">Reset</button>
+                    <button id="hintBtn" onclick="getHint()">💡 Hint</button>
+                </div>
+                <div class="puzzle-container">
+                    <div id="puzzle-play" class="puzzle-grid"></div>
+                </div>
+                <div class="stats">
+                    <p>Moves: <span id="movesCount">0</span></p>
+                </div>
+            </div>
+
+            <div id="solve-mode" class="mode-content" style="display: none;">
+                <h3>Watch AI Solve Using A*</h3>
+                <p>The A* algorithm finds the optimal solution using heuristics.</p>
+                <div class="controls">
+                    <button id="solveBtn">Solve</button>
+                    <button id="resetSolveBtn">Reset</button>
+                </div>
+                <div class="puzzle-container">
+                    <div id="puzzle-solve" class="puzzle-grid"></div>
+                </div>
+                <div class="stats">
+                    <p>Steps: <span id="stepsCount">0</span></p>
+                    <p>Nodes Explored: <span id="nodesExplored">0</span></p>
+                </div>
+            </div>
+
+            <div id="learn-mode" class="mode-content" style="display: none;">
+                <h3>📚 A* Algorithm Explanation</h3>
+                <div id="algorithm-explanation" class="algorithm-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe - AI Algorithm Visualizer</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-page">
+        <div class="game-header">
+            <h2>⭕ Tic-Tac-Toe</h2>
+            <button class="back-btn" onclick="window.location.href='/'">← Back to Home</button>
+        </div>
+
+        <div class="game-content">
+            <div class="mode-selector">
+                <button class="mode-btn" onclick="switchMode('play')">🎮 Play</button>
+                <button class="mode-btn" onclick="switchMode('analyze')">🤖 Analyze</button>
+                <button class="mode-btn" onclick="switchMode('learn')">📘 Learn</button>
+            </div>
+
+            <div id="play-mode" class="mode-content">
+                <h3>Play Against AI</h3>
+                <p>You are <span class="player-x">X</span>, AI is <span class="player-o">O</span>. You go first!</p>
+                <div class="difficulty-selector">
+                    <label><strong>Difficulty:</strong></label>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-btn" onclick="setDifficulty('easy')" data-level="easy">🌱 Easy</button>
+                        <button class="difficulty-btn" onclick="setDifficulty('medium')" data-level="medium">⚔️ Medium</button>
+                        <button class="difficulty-btn active" onclick="setDifficulty('hard')" data-level="hard">👑 Hard</button>
+                    </div>
+                </div>
+                <div class="game-status" id="gameStatus">Your turn</div>
+                <div class="controls">
+                    <button id="resetPlayBtn">🔄 New Game</button>
+                    <button id="resetStatsBtn">🧹 Reset Statistics</button>
+                </div>
+                <div class="board-container">
+                    <div id="board-play" class="tictactoe-board"></div>
+                </div>
+                <div class="stats">
+                    <p>Wins: <span id="winCount">0</span></p>
+                    <p>Losses: <span id="lossCount">0</span></p>
+                    <p>Draws: <span id="drawCount">0</span></p>
+                    <p>Win Rate: <span id="winRate">0%</span></p>
+                </div>
+            </div>
+
+            <div id="analyze-mode" class="mode-content" style="display: none;">
+                <h3>Analyze AI Decisions</h3>
+                <p>Watch how Minimax algorithm evaluates each possible move.</p>
+                <div class="controls">
+                    <button id="analyzeBtn">Show Best Move</button>
+                    <button id="resetAnalyzeBtn">Reset</button>
+                </div>
+                <div class="board-container">
+                    <div id="board-analyze" class="tictactoe-board"></div>
+                </div>
+                <div class="move-analysis" id="moveAnalysis"></div>
+            </div>
+
+            <div id="learn-mode" class="mode-content" style="display: none;">
+                <h3>📚 Minimax Algorithm Explanation</h3>
+                <div id="algorithm-explanation" class="algorithm-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

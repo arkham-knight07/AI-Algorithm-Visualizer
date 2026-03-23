@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Queens - AI Algorithm Visualizer</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-page">
+        <div class="game-header">
+            <h2>👑 8 Queens</h2>
+            <button class="back-btn" onclick="window.location.href='/'">← Back to Home</button>
+        </div>
+
+        <div class="game-content">
+            <div class="mode-selector">
+                <button class="mode-btn" onclick="switchMode('play', this)">🎮 Play</button>
+                <button class="mode-btn" onclick="switchMode('solve', this)">🤖 Solve</button>
+                <button class="mode-btn" onclick="switchMode('learn', this)">📘 Learn</button>
+            </div>
+
+            <div id="play-mode" class="mode-content">
+                <h3>Place 8 Queens Without Attacking</h3>
+                <p>Place queens so no two are on the same row, column, or diagonal.</p>
+                <div class="game-status" id="playStatus">Queens placed: <span id="queenCounter">0</span>/8</div>
+                <div class="controls">
+                    <button id="resetPlayBtn">Reset</button>
+                    <button id="checkPlayBtn">Check Solution</button>
+                </div>
+                <div class="board-container">
+                    <div id="board-play" class="chess-board"></div>
+                </div>
+                <div class="stats">
+                    <p id="conflictInfo" style="color: #e74c3c; font-weight: bold;">0 conflicts detected</p>
+                </div>
+            </div>
+
+            <div id="solve-mode" class="mode-content" style="display: none;">
+                <h3>Watch Backtracking Algorithm Solve</h3>
+                <p>AI finds a valid solution by trying and backtracking when conflicts occur.</p>
+                <div class="controls">
+                    <button id="solveBtn">Solve</button>
+                    <button id="showAllBtn">Show All Solutions</button>
+                    <button id="resetSolveBtn">Reset</button>
+                </div>
+                <div id="algorithmSteps" class="algorithm-steps" style="display: none;">
+                    <h4>Backtracking Steps:</h4>
+                    <div id="stepsList" style="max-height: 200px; overflow-y: auto;"></div>
+                </div>
+                <div class="board-container">
+                    <div id="board-solve" class="chess-board"></div>
+                </div>
+                <div class="stats">
+                    <p>Solution <span id="solutionNumber">1</span> of <span id="totalSolutions">92</span></p>
+                    <p>Backtrack Count: <span id="backtrackCount">0</span></p>
+                </div>
+            </div>
+
+            <div id="learn-mode" class="mode-content" style="display: none;">
+                <h3>📚 Backtracking Algorithm Explanation</h3>
+                <div id="algorithm-explanation" class="algorithm-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

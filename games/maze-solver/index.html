@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Solver - AI Algorithm Visualizer</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-page">
+        <div class="game-header">
+            <h2>🗺️ Maze Solver</h2>
+            <button class="back-btn" onclick="window.location.href='/'">← Back to Home</button>
+        </div>
+
+        <div class="game-content">
+            <!-- Mode Selector -->
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="play" onclick="switchMode('play')">🎮 Play</button>
+                <button class="mode-btn" data-mode="solve" onclick="switchMode('solve')">🤖 Solve</button>
+                <button class="mode-btn" data-mode="learn" onclick="switchMode('learn')">📘 Learn</button>
+            </div>
+
+            <!-- Play Mode -->
+            <div id="play-mode" class="mode-content active">
+                <div class="mode-header">
+                    <h3>🎮 Play Mode</h3>
+                    <p class="instructions">Navigate through the maze! Use Arrow Keys or WASD to move. Reach E (end) to complete the level.</p>
+                </div>
+
+                <div class="settings-panel">
+                    <div class="setting-group">
+                        <label><strong>Maze Size:</strong></label>
+                        <div>15x15</div>
+                    </div>
+                </div>
+
+                <div class="game-stats-panel">
+                    <div class="stat"><span class="stat-label">Moves:</span> <span id="play-moves">0</span></div>
+                    <div class="stat"><span class="stat-label">Time:</span> <span id="play-time">0s</span></div>
+                    <div class="stat" id="play-status"><span class="stat-label">Status:</span> <span>Ready</span></div>
+                </div>
+
+                <div class="controls">
+                    <button id="play-new-btn" class="btn btn-primary" onclick="startNewGame()">🔄 New Maze</button>
+                </div>
+
+                <div id="play-grid" class="grid-container"></div>
+            </div>
+
+            <!-- Solve Mode -->
+            <div id="solve-mode" class="mode-content">
+                <div class="mode-header">
+                    <h3>🤖 Solve Mode</h3>
+                    <p class="instructions">Watch AI algorithms solve the maze. Compare different pathfinding strategies!</p>
+                </div>
+
+                <div class="settings-panel">
+                    <div class="setting-group">
+                        <label><strong>Algorithm:</strong></label>
+                        <select id="algorithm-select" class="algorithm-select">
+                            <option value="bfs">BFS (Breadth-First Search)</option>
+                            <option value="dfs">DFS (Depth-First Search)</option>
+                            <option value="astar">A* (A-Star)</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label><strong>Maze Size:</strong></label>
+                        <div>15x15</div>
+                    </div>
+
+                    <div class="setting-group">
+                        <label><strong>Speed:</strong></label>
+                        <input type="range" id="speed-slider" min="1" max="10" value="5" class="slider">
+                        <span id="speed-label">Medium</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="solve-start-btn" class="btn btn-primary" onclick="runSolve()">▶️ Solve!</button>
+                    <button id="solve-pause-btn" class="btn btn-secondary" onclick="pauseSolve()" style="display:none;">⏸️ Pause</button>
+                    <button id="solve-reset-btn" class="btn btn-secondary" onclick="resetSolve()">🔄 Reset</button>
+                </div>
+
+                <div class="stats-panel">
+                    <div class="stat"><span class="stat-label">Cells Explored:</span> <span id="explored-count">0</span></div>
+                    <div class="stat"><span class="stat-label">Path Length:</span> <span id="path-length">0</span></div>
+                    <div class="stat"><span class="stat-label">Time:</span> <span id="solve-time">0ms</span></div>
+                    <div class="stat"><span class="stat-label">Efficiency:</span> <span id="efficiency">0%</span></div>
+                </div>
+
+                <div id="solve-grid" class="grid-container"></div>
+
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-color wall"></div> Wall</div>
+                    <div class="legend-item"><div class="legend-color start"></div> Start (S)</div>
+                    <div class="legend-item"><div class="legend-color end"></div> End (E)</div>
+                    <div class="legend-item"><div class="legend-color explored"></div> Explored</div>
+                    <div class="legend-item"><div class="legend-color path"></div> Path</div>
+                </div>
+            </div>
+
+            <!-- Learn Mode -->
+            <div id="learn-mode" class="mode-content">
+                <div class="mode-header">
+                    <h3>📚 Learn Mode</h3>
+                    <p class="instructions">Understand how different pathfinding algorithms work.</p>
+                </div>
+
+                <div class="algorithms-grid">
+                    <div class="algorithm-card">
+                        <h4>BFS (Breadth-First Search)</h4>
+                        <p><strong>Approach:</strong> Explores level by level, checking all neighbors before moving deeper.</p>
+                        <p><strong>Pros:</strong> Guaranteed shortest path, systematic exploration</p>
+                        <p><strong>Cons:</strong> Uses more memory, slower than informed algorithms</p>
+                        <p><strong>Best For:</strong> Maze solving, unweighted graphs</p>
+                    </div>
+
+                    <div class="algorithm-card">
+                        <h4>DFS (Depth-First Search)</h4>
+                        <p><strong>Approach:</strong> Dives deep into one path, backtracks when stuck.</p>
+                        <p><strong>Pros:</strong> Uses less memory, fast exploration</p>
+                        <p><strong>Cons:</strong> May not find shortest path, can get stuck in dead ends</p>
+                        <p><strong>Best For:</strong> Maze generation, cycle detection</p>
+                    </div>
+
+                    <div class="algorithm-card">
+                        <h4>A* (A-Star)</h4>
+                        <p><strong>Approach:</strong> Uses heuristics to guide search toward goal efficiently.</p>
+                        <p><strong>Pros:</strong> Faster than BFS/DFS, finds optimal path with good heuristics</p>
+                        <p><strong>Cons:</strong> More complex, requires good heuristic</p>
+                        <p><strong>Best For:</strong> Game pathfinding, GPS navigation</p>
+                    </div>
+                </div>
+
+                <div class="complexity-table">
+                    <h4>Algorithm Comparison</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Algorithm</th>
+                                <th>Time Complexity</th>
+                                <th>Space Complexity</th>
+                                <th>Optimal Path</th>
+                                <th>Complete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BFS</td>
+                                <td>O(V + E)</td>
+                                <td>O(V)</td>
+                                <td>✅ Yes</td>
+                                <td>✅ Yes</td>
+                            </tr>
+                            <tr>
+                                <td>DFS</td>
+                                <td>O(V + E)</td>
+                                <td>O(h)</td>
+                                <td>❌ No</td>
+                                <td>✅ Yes</td>
+                            </tr>
+                            <tr>
+                                <td>A*</td>
+                                <td>O(E)</td>
+                                <td>O(V)</td>
+                                <td>✅ Yes*</td>
+                                <td>✅ Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.9em; margin-top: 10px;">* With admissible heuristic</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
