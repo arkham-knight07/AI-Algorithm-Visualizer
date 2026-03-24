@@ -502,7 +502,7 @@ function startSolve() {
 
     const startBtn = document.getElementById('solve-start-btn');
     const pauseBtn = document.getElementById('solve-pause-btn');
-    if (startBtn) startBtn.textContent = '▶️ Solve!';
+    if (startBtn) startBtn.textContent = 'Solve';
     if (pauseBtn) pauseBtn.style.display = 'none';
 }
 
@@ -515,10 +515,10 @@ async function runSolve() {
 
     const startBtn = document.getElementById('solve-start-btn');
     const pauseBtn = document.getElementById('solve-pause-btn');
-    if (startBtn) startBtn.textContent = '⏳ Solving...';
+    if (startBtn) startBtn.textContent = 'Solving...';
     if (pauseBtn) {
         pauseBtn.style.display = 'inline-block';
-        pauseBtn.textContent = '⏸️ Pause';
+        pauseBtn.textContent = 'Pause';
     }
 
     const algorithm = document.getElementById('algorithm-select')?.value || 'bfs';
@@ -542,7 +542,7 @@ async function runSolve() {
     solveState.running = false;
     solveState.paused = false;
 
-    if (startBtn) startBtn.textContent = '▶️ Solve!';
+    if (startBtn) startBtn.textContent = 'Solve';
     if (pauseBtn) pauseBtn.style.display = 'none';
 }
 
@@ -552,7 +552,7 @@ function pauseSolve() {
 
     const pauseBtn = document.getElementById('solve-pause-btn');
     if (pauseBtn) {
-        pauseBtn.textContent = solveState.paused ? '▶️ Resume' : '⏸️ Pause';
+        pauseBtn.textContent = solveState.paused ? 'Resume' : 'Pause';
     }
 }
 

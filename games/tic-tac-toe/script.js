@@ -526,13 +526,13 @@ function updateGameStatus() {
     
     if (result) {
         if (result.winner === PLAYER) {
-            gameStatus.innerText = '🎉 You Won!';
+            gameStatus.innerText = 'You Won!';
             gameStatus.className = 'game-status game-won';
             stats.wins++;
             saveStats();
             updateStatsDisplay();
         } else {
-            gameStatus.innerText = '🤖 AI Won!';
+            gameStatus.innerText = 'AI Won!';
             gameStatus.className = 'game-status game-lost';
             stats.losses++;
             saveStats();
@@ -540,14 +540,14 @@ function updateGameStatus() {
         }
         gameOver = true;
     } else if (isBoardFull(boardPlay)) {
-        gameStatus.innerText = '🤝 It\'s a Draw!';
+        gameStatus.innerText = 'It\'s a Draw!';
         gameStatus.className = 'game-status game-draw';
         stats.draws++;
         saveStats();
         updateStatsDisplay();
         gameOver = true;
     } else if (isAIThinking) {
-        gameStatus.innerText = '🤖 AI is thinking...';
+        gameStatus.innerText = 'AI is thinking...';
         gameStatus.className = 'game-status ai-turn';
     } else {
         gameStatus.innerText = 'Your turn (X)';

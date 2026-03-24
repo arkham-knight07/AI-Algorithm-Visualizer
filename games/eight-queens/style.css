@@ -133,7 +133,9 @@
 .queen {
     font-size: 2em;
     cursor: pointer;
-    filter: drop-shadow(2px 2px 5px rgba(91, 126, 255, 0.3));
+    color: #f3c44f;
+    text-shadow: 0 0 8px rgba(243, 196, 79, 0.5), 1px 1px 0 #7a5711;
+    filter: drop-shadow(2px 2px 5px rgba(122, 87, 17, 0.35));
 }
 
 .square.conflict {

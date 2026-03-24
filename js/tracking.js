@@ -84,7 +84,7 @@ function updateProgressBar() {
     const progressText = document.getElementById('progress-text');
     if (progressText) {
         if (percentage === 100) {
-            progressText.textContent = `🎉 100% Complete - You're an Algorithm Master!`;
+            progressText.textContent = `100% Complete - You are an Algorithm Master!`;
             progressText.style.color = '#4CAF50';
         } else {
             progressText.textContent = `${percentage}% Complete - Play ${totalGames - gamesPlayed} more game${totalGames - gamesPlayed !== 1 ? 's' : ''} to unlock Quest Master!`;
@@ -146,7 +146,7 @@ function updateAchievements() {
     // Update achievement count
     const achievementCount = document.getElementById('achievement-count');
     if (achievementCount) {
-        achievementCount.textContent = `🏆 Achievements: ${unlockedCount}/4`;
+        achievementCount.textContent = `Achievements: ${unlockedCount}/4`;
     }
 }
 

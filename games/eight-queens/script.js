@@ -133,7 +133,7 @@ function renderPlayBoard() {
             
             if (playBoard[r][c]) {
                 square.classList.add('queen');
-                square.innerHTML = '👑';
+                square.textContent = '👑';
             } else if (threatened.has(`${r},${c}`)) {
                 square.classList.add('threatened');
             }
@@ -253,7 +253,7 @@ function renderSolveBoard() {
             
             if (solution[r][c]) {
                 square.classList.add('queen');
-                square.innerHTML = '👑';
+                square.textContent = '👑';
             }
             
             boardElement.appendChild(square);

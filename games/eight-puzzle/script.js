@@ -224,7 +224,7 @@ function handleTileClick(idx, type) {
         renderBoard(type);
 
         if (isSolved(board)) {
-            setTimeout(() => alert('🎉 Puzzle Solved!'), 100);
+            setTimeout(() => alert('Puzzle Solved!'), 100);
         }
     }
 }
@@ -502,7 +502,7 @@ function getHint() {
         renderBoard('play');
         
         if (isSolved(boardPlay)) {
-            setTimeout(() => alert('🎉 Puzzle Solved!'), 100);
+            setTimeout(() => alert('Puzzle Solved!'), 100);
         }
     }
 }
@@ -521,8 +521,8 @@ document.querySelectorAll('.mode-btn').forEach(btn => {
 
         const modeText = e.target.innerText.toLowerCase();
         let selectedMode = 'play';
-        if (modeText.includes('solve') || modeText.includes('🤖')) selectedMode = 'solve';
-        if (modeText.includes('learn') || modeText.includes('📘')) selectedMode = 'learn';
+        if (modeText.includes('solve')) selectedMode = 'solve';
+        if (modeText.includes('learn')) selectedMode = 'learn';
 
         const selectedEl = document.getElementById(`${selectedMode}-mode`);
         if (selectedEl) selectedEl.style.display = 'block';

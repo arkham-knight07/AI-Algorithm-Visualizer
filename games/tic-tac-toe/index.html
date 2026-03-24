@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe - AI Algorithm Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-page">
         <div class="game-header">
-            <h2>⭕ Tic-Tac-Toe</h2>
+            <h2>TIC-TAC-TOE</h2>
             <button class="back-btn" onclick="window.location.href='/'">← Back to Home</button>
         </div>
 
         <div class="game-content">
             <div class="mode-selector">
-                <button class="mode-btn" onclick="switchMode('play')">🎮 Play</button>
-                <button class="mode-btn" onclick="switchMode('analyze')">🤖 Analyze</button>
-                <button class="mode-btn" onclick="switchMode('learn')">📘 Learn</button>
+                <button class="mode-btn" onclick="switchMode('play')">Play</button>
+                <button class="mode-btn" onclick="switchMode('analyze')">Analyze</button>
+                <button class="mode-btn" onclick="switchMode('learn')">Learn</button>
             </div>
 
             <div id="play-mode" class="mode-content">
@@ -27,15 +30,15 @@
                 <div class="difficulty-selector">
                     <label><strong>Difficulty:</strong></label>
                     <div class="difficulty-buttons">
-                        <button class="difficulty-btn" onclick="setDifficulty('easy')" data-level="easy">🌱 Easy</button>
-                        <button class="difficulty-btn" onclick="setDifficulty('medium')" data-level="medium">⚔️ Medium</button>
-                        <button class="difficulty-btn active" onclick="setDifficulty('hard')" data-level="hard">👑 Hard</button>
+                        <button class="difficulty-btn" onclick="setDifficulty('easy')" data-level="easy">Rookie</button>
+                        <button class="difficulty-btn" onclick="setDifficulty('medium')" data-level="medium">Challenger</button>
+                        <button class="difficulty-btn active" onclick="setDifficulty('hard')" data-level="hard">Master</button>
                     </div>
                 </div>
                 <div class="game-status" id="gameStatus">Your turn</div>
                 <div class="controls">
-                    <button id="resetPlayBtn">🔄 New Game</button>
-                    <button id="resetStatsBtn">🧹 Reset Statistics</button>
+                    <button id="resetPlayBtn">New Game</button>
+                    <button id="resetStatsBtn">Reset Statistics</button>
                 </div>
                 <div class="board-container">
                     <div id="board-play" class="tictactoe-board"></div>
@@ -62,7 +65,7 @@
             </div>
 
             <div id="learn-mode" class="mode-content" style="display: none;">
-                <h3>📚 Minimax Algorithm Explanation</h3>
+                <h3>Minimax Algorithm Explanation</h3>
                 <div id="algorithm-explanation" class="algorithm-info"></div>
             </div>
         </div>

@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maze Solver - AI Algorithm Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-page">
         <div class="game-header">
-            <h2>🗺️ Maze Solver</h2>
+            <h2>MAZE SOLVER</h2>
             <button class="back-btn" onclick="window.location.href='/'">← Back to Home</button>
         </div>
 
         <div class="game-content">
             <!-- Mode Selector -->
             <div class="mode-selector">
-                <button class="mode-btn active" data-mode="play" onclick="switchMode('play')">🎮 Play</button>
-                <button class="mode-btn" data-mode="solve" onclick="switchMode('solve')">🤖 Solve</button>
-                <button class="mode-btn" data-mode="learn" onclick="switchMode('learn')">📘 Learn</button>
+                <button class="mode-btn active" data-mode="play" onclick="switchMode('play')">Play</button>
+                <button class="mode-btn" data-mode="solve" onclick="switchMode('solve')">Solve</button>
+                <button class="mode-btn" data-mode="learn" onclick="switchMode('learn')">Learn</button>
             </div>
 
             <!-- Play Mode -->
             <div id="play-mode" class="mode-content active">
                 <div class="mode-header">
-                    <h3>🎮 Play Mode</h3>
+                    <h3>Play Mode</h3>
                     <p class="instructions">Navigate through the maze! Use Arrow Keys or WASD to move. Reach E (end) to complete the level.</p>
                 </div>
 
@@ -43,7 +46,7 @@
                 </div>
 
                 <div class="controls">
-                    <button id="play-new-btn" class="btn btn-primary" onclick="startNewGame()">🔄 New Maze</button>
+                    <button id="play-new-btn" class="btn btn-primary" onclick="startNewGame()">New Maze</button>
                 </div>
 
                 <div id="play-grid" class="grid-container"></div>
@@ -52,7 +55,7 @@
             <!-- Solve Mode -->
             <div id="solve-mode" class="mode-content">
                 <div class="mode-header">
-                    <h3>🤖 Solve Mode</h3>
+                    <h3>Solve Mode</h3>
                     <p class="instructions">Watch AI algorithms solve the maze. Compare different pathfinding strategies!</p>
                 </div>
 
@@ -79,9 +82,9 @@
                 </div>
 
                 <div class="controls">
-                    <button id="solve-start-btn" class="btn btn-primary" onclick="runSolve()">▶️ Solve!</button>
-                    <button id="solve-pause-btn" class="btn btn-secondary" onclick="pauseSolve()" style="display:none;">⏸️ Pause</button>
-                    <button id="solve-reset-btn" class="btn btn-secondary" onclick="resetSolve()">🔄 Reset</button>
+                    <button id="solve-start-btn" class="btn btn-primary" onclick="runSolve()">Solve</button>
+                    <button id="solve-pause-btn" class="btn btn-secondary" onclick="pauseSolve()" style="display:none;">Pause</button>
+                    <button id="solve-reset-btn" class="btn btn-secondary" onclick="resetSolve()">Reset</button>
                 </div>
 
                 <div class="stats-panel">
@@ -105,7 +108,7 @@
             <!-- Learn Mode -->
             <div id="learn-mode" class="mode-content">
                 <div class="mode-header">
-                    <h3>📚 Learn Mode</h3>
+                    <h3>Learn Mode</h3>
                     <p class="instructions">Understand how different pathfinding algorithms work.</p>
                 </div>
 
@@ -152,22 +155,22 @@
                                 <td>BFS</td>
                                 <td>O(V + E)</td>
                                 <td>O(V)</td>
-                                <td>✅ Yes</td>
-                                <td>✅ Yes</td>
+                                <td>YES</td>
+                                <td>YES</td>
                             </tr>
                             <tr>
                                 <td>DFS</td>
                                 <td>O(V + E)</td>
                                 <td>O(h)</td>
-                                <td>❌ No</td>
-                                <td>✅ Yes</td>
+                                <td>NO</td>
+                                <td>YES</td>
                             </tr>
                             <tr>
                                 <td>A*</td>
                                 <td>O(E)</td>
                                 <td>O(V)</td>
-                                <td>✅ Yes*</td>
-                                <td>✅ Yes</td>
+                                <td>YES*</td>
+                                <td>YES</td>
                             </tr>
                         </tbody>
                     </table>

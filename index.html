@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algorithm Quest - Learn AI Through Gaming</title>
+    <title>Algorithm Quest - Retro Arcade Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="landing-home">
     <div class="landing-container">
         <!-- Navigation Bar -->
         <nav class="top-nav">
-            <div class="nav-logo">🎮 Algorithm Quest</div>
+            <div class="nav-logo">ALGORITHM QUEST</div>
             <div class="nav-stats">
                 <span id="progress-badge">Games Played: 0/5</span>
-                <span id="achievement-count">🏆 Achievements: 0</span>
+                <span id="achievement-count">Achievements: 0</span>
             </div>
         </nav>
 
         <!-- Game Platform Bar -->
         <div class="game-platform-bar">
             <div class="platform-content">
-                <div class="platform-title">⚡ QUICK LAUNCH PAD</div>
+                <div class="platform-title">QUICK LAUNCH PAD</div>
                 <div class="platform-games">
                     <button class="platform-btn" onclick="launchGame('tic-tac-toe')" title="Tic-Tac-Toe">
-                        <span class="btn-icon">⭕</span>
+                        <span class="btn-icon">XO</span>
                         <span class="btn-label">TTT</span>
                     </button>
                     <button class="platform-btn" onclick="launchGame('eight-puzzle')" title="8 Puzzle">
-                        <span class="btn-icon">🧩</span>
+                        <span class="btn-icon">8P</span>
                         <span class="btn-label">PUZZLE</span>
                     </button>
                     <button class="platform-btn" onclick="launchGame('eight-queens')" title="8 Queens">
-                        <span class="btn-icon">👑</span>
+                        <span class="btn-icon">8Q</span>
                         <span class="btn-label">QUEENS</span>
                     </button>
                     <button class="platform-btn" onclick="launchGame('maze-solver')" title="Maze Solver">
-                        <span class="btn-icon">🗺️</span>
+                        <span class="btn-icon">MZ</span>
                         <span class="btn-label">MAZE</span>
                     </button>
                 </div>
@@ -45,22 +48,22 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">🧠 Algorithm Quest</h1>
-                <p class="hero-subtitle">Master AI & Algorithms Through Interactive Games</p>
+                <h1 class="hero-title">INSERT COIN: ALGORITHM QUEST</h1>
+                <p class="hero-subtitle">A Pixel Arcade For AI And Algorithm Skills</p>
                 <p class="hero-description">
-                    Play challenging games, compete with AI, and reveal the algorithms operating behind the scenes. 
-                    <span class="secret-angle">Learn computer science the fun way.</span>
+                    From maze runs to queen puzzles, every cabinet is wired with a real algorithm.
+                    <span class="secret-angle">Beat the level. Learn the logic. Chase the high score.</span>
                 </p>
                 <div class="cta-button" onclick="document.querySelector('.challenges-section').scrollIntoView({behavior: 'smooth'})">
-                    🚀 Start Your Quest
+                    PRESS START
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="floating-icons">
-                    <div class="icon-float">🎯</div>
-                    <div class="icon-float">💡</div>
-                    <div class="icon-float">⚡</div>
-                    <div class="icon-float">🔮</div>
+                    <div class="icon-float">HI SCORE</div>
+                    <div class="icon-float">LEVEL 1</div>
+                    <div class="icon-float">CREDITS 01</div>
+                    <div class="icon-float">READY?</div>
                 </div>
             </div>
         </section>
@@ -78,35 +81,35 @@
 
         <!-- Challenges Section -->
         <section class="challenges-section">
-            <h2>🎮 Choose Your Challenge</h2>
-            <p class="section-desc">Each game teaches you a different algorithm. Master them all to become an Algorithm Master!</p>
+            <h2>Pick Your Cabinet</h2>
+            <p class="section-desc">Each cabinet hides a different algorithm. Clear them all to unlock arcade legend status.</p>
 
             <div class="difficulty-tabs">
                 <button class="tab-btn active" onclick="filterByDifficulty('all')">All</button>
-                <button class="tab-btn" onclick="filterByDifficulty('beginner')">🌱 Beginner</button>
-                <button class="tab-btn" onclick="filterByDifficulty('intermediate')">⚔️ Intermediate</button>
-                <button class="tab-btn" onclick="filterByDifficulty('advanced')">👑 Advanced</button>
+                <button class="tab-btn" onclick="filterByDifficulty('beginner')">Rookie</button>
+                <button class="tab-btn" onclick="filterByDifficulty('intermediate')">Challenger</button>
+                <button class="tab-btn" onclick="filterByDifficulty('advanced')">Master</button>
             </div>
 
             <div class="games-grid">
                 <!-- Maze Solver -->
                 <div class="game-card beginner" onclick="launchGame('maze-solver')" data-game="maze-solver">
                     <div class="card-header">
-                        <div class="game-icon">🗺️</div>
-                        <div class="difficulty-badge beginner">🌱 Beginner</div>
+                        <div class="game-icon">MZ</div>
+                        <div class="difficulty-badge beginner">Rookie</div>
                     </div>
                     <h3>Maze Solver</h3>
                     <p class="algorithm">BFS • DFS • A*</p>
                     <p class="description">Navigate through complex mazes using pathfinding algorithms.</p>
                     <div class="card-stats">
-                        <span class="stat-item">📊 Pathfinding</span>
+                        <span class="stat-item">Pathfinding</span>
                         <span class="stat-item" id="maze-played">Not played</span>
                     </div>
                     <div class="card-footer">
                         <div class="play-modes">
-                            <span class="mode-dot">🎮</span>
-                            <span class="mode-dot">🤖</span>
-                            <span class="mode-dot">📚</span>
+                            <span class="mode-dot">PLAY</span>
+                            <span class="mode-dot">AI</span>
+                            <span class="mode-dot">LEARN</span>
                         </div>
                         <span class="card-cta">Play →</span>
                     </div>
@@ -115,21 +118,21 @@
                 <!-- 8 Puzzle -->
                 <div class="game-card intermediate" onclick="launchGame('eight-puzzle')" data-game="eight-puzzle">
                     <div class="card-header">
-                        <div class="game-icon">🧩</div>
-                        <div class="difficulty-badge intermediate">⚔️ Intermediate</div>
+                        <div class="game-icon">8P</div>
+                        <div class="difficulty-badge intermediate">Challenger</div>
                     </div>
                     <h3>8 Puzzle</h3>
                     <p class="algorithm">A* with Manhattan Distance</p>
                     <p class="description">Arrange scrambled tiles using heuristic search strategies.</p>
                     <div class="card-stats">
-                        <span class="stat-item">🎯 Heuristic Search</span>
+                        <span class="stat-item">Heuristic Search</span>
                         <span class="stat-item" id="puzzle-played">Not played</span>
                     </div>
                     <div class="card-footer">
                         <div class="play-modes">
-                            <span class="mode-dot">🎮</span>
-                            <span class="mode-dot">🤖</span>
-                            <span class="mode-dot">📚</span>
+                            <span class="mode-dot">PLAY</span>
+                            <span class="mode-dot">AI</span>
+                            <span class="mode-dot">LEARN</span>
                         </div>
                         <span class="card-cta">Play →</span>
                     </div>
@@ -138,21 +141,21 @@
                 <!-- Tic-Tac-Toe -->
                 <div class="game-card intermediate" onclick="launchGame('tic-tac-toe')" data-game="tic-tac-toe">
                     <div class="card-header">
-                        <div class="game-icon">⭕</div>
-                        <div class="difficulty-badge intermediate">⚔️ Intermediate</div>
+                        <div class="game-icon">XO</div>
+                        <div class="difficulty-badge intermediate">Challenger</div>
                     </div>
                     <h3>Tic-Tac-Toe</h3>
                     <p class="algorithm">Minimax Algorithm</p>
                     <p class="description">Play the classic game against an unbeatable AI opponent.</p>
                     <div class="card-stats">
-                        <span class="stat-item">🎮 Game Theory</span>
+                        <span class="stat-item">Game Theory</span>
                         <span class="stat-item" id="ttt-played">Not played</span>
                     </div>
                     <div class="card-footer">
                         <div class="play-modes">
-                            <span class="mode-dot">🎮</span>
-                            <span class="mode-dot">🤖</span>
-                            <span class="mode-dot">📚</span>
+                            <span class="mode-dot">PLAY</span>
+                            <span class="mode-dot">AI</span>
+                            <span class="mode-dot">LEARN</span>
                         </div>
                         <span class="card-cta">Play →</span>
                     </div>
@@ -161,21 +164,21 @@
                 <!-- 8 Queens -->
                 <div class="game-card advanced" onclick="launchGame('eight-queens')" data-game="eight-queens">
                     <div class="card-header">
-                        <div class="game-icon">👑</div>
-                        <div class="difficulty-badge advanced">👑 Advanced</div>
+                        <div class="game-icon">8Q</div>
+                        <div class="difficulty-badge advanced">Master</div>
                     </div>
                     <h3>8 Queens</h3>
                     <p class="algorithm">Backtracking</p>
                     <p class="description">Place 8 queens on a chessboard using constraint satisfaction.</p>
                     <div class="card-stats">
-                        <span class="stat-item">🔧 Backtracking</span>
+                        <span class="stat-item">Backtracking</span>
                         <span class="stat-item" id="queens-played">Not played</span>
                     </div>
                     <div class="card-footer">
                         <div class="play-modes">
-                            <span class="mode-dot">🎮</span>
-                            <span class="mode-dot">🤖</span>
-                            <span class="mode-dot">📚</span>
+                            <span class="mode-dot">PLAY</span>
+                            <span class="mode-dot">AI</span>
+                            <span class="mode-dot">LEARN</span>
                         </div>
                         <span class="card-cta">Play →</span>
                     </div>
@@ -185,31 +188,31 @@
 
         <!-- Achievement Section -->
         <section class="achievement-section">
-            <h2>🏆 Achievements & Badges</h2>
+            <h2>Achievements & Badges</h2>
             <div class="achievements-grid">
                 <div class="achievement-card locked" id="achi-first-game">
-                    <div class="achievement-icon">🎮</div>
+                    <div class="achievement-icon">NEW</div>
                     <div class="achievement-info">
                         <h4>First Steps</h4>
                         <p>Play your first game</p>
                     </div>
                 </div>
                 <div class="achievement-card locked" id="achi-all-games">
-                    <div class="achievement-icon">🌟</div>
+                    <div class="achievement-icon">ALL</div>
                     <div class="achievement-info">
                         <h4>Quest Master</h4>
                         <p>Play all 5 games</p>
                     </div>
                 </div>
                 <div class="achievement-card locked" id="achi-solver">
-                    <div class="achievement-icon">🧠</div>
+                    <div class="achievement-icon">AI</div>
                     <div class="achievement-info">
                         <h4>Algorithm Expert</h4>
                         <p>Master 3+ algorithms</p>
                     </div>
                 </div>
                 <div class="achievement-card locked" id="achi-learn">
-                    <div class="achievement-icon">📚</div>
+                    <div class="achievement-icon">PRO</div>
                     <div class="achievement-info">
                         <h4>Knowledge Seeker</h4>
                         <p>Explore Learn mode in 3+ games</p>
@@ -220,19 +223,18 @@
 
         <!-- Info Section -->
         <section class="info-section">
-            <h2>💡 What's the Secret?</h2>
+            <h2>Secret Behind The Pixels</h2>
             <p>
-                Algorithm Quest isn't just a game collection—it's a learning platform disguised as pure fun. 
-                Every game you play teaches you real algorithms used in computer science and AI. 
-                Watch how different strategies solve the same problem, then explore the algorithm behind each solution. 
-                <strong>That's the magic: learning happens naturally through play.</strong>
+                Algorithm Quest is built like an old-school game center, but every challenge runs on real AI ideas.
+                You get instant gameplay, then peel back the layer to see how search, strategy, and optimization work.
+                <strong>Arcade energy in front, computer science power under the hood.</strong>
             </p>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>🚀 Challenge yourself. Learn algorithms. Master AI. 🧠</p>
-            <p style="font-size: 0.85em; color: #999; margin-top: 10px;">Built with 💜 for algorithm lovers</p>
+            <p>READY PLAYER: LEARNER</p>
+            <p style="font-size: 0.95em; color: #f4c26b; margin-top: 10px;">Built for algorithm fans who miss the arcade days</p>
         </footer>
     </div>
 
